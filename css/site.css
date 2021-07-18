@@ -120,6 +120,28 @@ fieldset[disabled] .btn-rotator.active {
     background-color: var(--primary-color) !important;
 }
 
+.btn.btn-outline-danger {
+    width: 120px;
+    height: 45px;
+    background-image: url(../img/ROTATOR/RotatorButtonBefore.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.btn.btn-outline-danger:hover {
+    background-image: url(../img/ROTATOR/RotatorButtonAfter.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: transparent;
+}
+
+.btn.btn-outline-danger:focus {
+    background-image: url(../img/ROTATOR/RotatorButtonAfter.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: transparent;
+}
+
 main>.container {
     padding: 60px 15px 0;
 }

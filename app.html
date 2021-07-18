@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Razvan Roman</title>
+    <title>ROTATOR: A Coding Project by Razvan Roman</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,8 +24,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="img/RRLogoWhite.svg"
-                    class="d-inline-block align-text-center" width="30" height="30" alt="Razvan Roman Logo"> App
-                Name</a>
+                    class="d-inline-block align-text-center" width="30" height="30" alt="Razvan Roman Logo"> ROTATOR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +54,41 @@
     <!-- Main Section -->
     <main class="flex-shrink--">
         <div class="container">
-
+            <div class="row pt-3">
+                <div class="col border-end border-1 text-center">
+                    <img src="img/ROTATOR/Rotator.svg" alt="Rotator Logo" class="img-fluid" width="200">
+                    <h4 class="lead mt-4">
+                        The word <span class="fw-bold">ROTATOR</span> speaks for itself. It rotates things.
+                        And also, it's a <span class="fw-bold">Palindrome</span>, and that means it is the same,
+                        no matter which way you read it. <span class="fw-bold">Rotating</span> it will get you the same
+                        word.
+                        And thats exactly what our app does. It checks if the word or phrase entered is a <span
+                            class="fw-bold">palindrome</span>. Let's see...
+                    </h4>
+                </div>
+                <div class="col">
+                    <div class="row border-bottom border-1">
+                        <h5>Enter a word or phrase :</h5>
+                    </div>
+                    <form action="" class="row">
+                        <div class="col">
+                            <input type="text" class="form-control mt-2" id="phrase" placeholder="Enter a string"
+                                aria-label="Enter a string">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-outline-danger my-3" type="submit" id="submitButton"></button>
+                        </div>
+                    </form>
+                    <div class="row ms-0 mt-5">
+                        <div class="alert alert-danger fade show" role="alert" id="alert">
+                            <img src="img/ROTATOR/RotatorButtonAfter.svg" alt="Rotator Logo" class="img-fluid">
+                            <h5 id="resultTitle"></h5>
+                            <hr>
+                            <p class="lead" id="resultText"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer Section -->
