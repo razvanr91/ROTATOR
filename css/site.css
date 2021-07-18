@@ -26,6 +26,14 @@ h6 {
     color: var(--secodary-color);
 }
 
+p {
+    color: var(--primary-color);
+}
+
+.titleColor {
+    color: var(--primary-color);
+}
+
 .footer-text {
     font-size: 0.8rem;
 }

@@ -2,7 +2,8 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Razvan Roman</title>
+    <!-- Change App Name Here -->
+    <title>ROTATOR: A Coding Project by Razvan Roman</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,9 +25,9 @@
     <!-- Nav Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
+            <!-- Change App Name Here -->
             <a class="navbar-brand" href="index.html"><img src="img/RRLogoWhite.svg"
-                    class="d-inline-block align-text-center" width="30" height="30" alt="Razvan Roman Logo"> App
-                Name</a>
+                    class="d-inline-block align-text-center" width="30" height="30" alt="Razvan Roman Logo"> ROTATOR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,16 +62,151 @@
                 <div class="col-lg-8">
                     <!-- Prism does not stack well -->
                     <pre ref="pre"><code class="language-javascript line-numbers" ref="code">
-                        //Call Hello World
-                        function HelloWorld() {
-                            alert("Hello World");
+                    // get all values
+
+                    let alertDiv = document.getElementById('alert');
+
+                    let title = document.getElementById('title');
+
+                    let message = document.getElementById('message');
+
+                    function start() {
+                        // retrieve the input value, and using a regular expression
+                        // we trim out the white spaces and all the special characters
+                        let input = document.getElementById("phrase").value;
+                        let inputValue = input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+                        // make sure the title and message are empty
+                        title.textContent = "";
+
+                        message.textContent = "";
+
+                        // make sure the alert div is invisible
+                        alertDiv.classList.add('invisible');
+
+                        // check if any value was passed
+                        if (!inputValue) {
+                            title.textContent = "Something went wrong...";
+                            message.textContent = `
+                                You must enter a string in order for this to work... Try again.
+                            `;
+                            alertDiv.classList.remove("invisible");
+                            document
+                        } else {
+                            let rotatorValue = rotator(inputValue);
+                            displayResult(rotatorValue, inputValue, input);
                         }
+                    }
+
+                    // reverse the string
+                    function rotator(inputValue) {
+                        let result = [];
+
+                        for (let i = inputValue.length - 1; i >= 0; i--) {
+                            result.push(inputValue[i]);
+                        }
+
+                        return result.join('');
+                    }
+
+                    function displayResult(rotatorValue, inputValue, input) {
+                        if (rotatorValue === inputValue) {
+                            title.textContent = "Congratulations!";
+                            message.innerHTML = `
+                            You have entered a <span class="fw-bold">Palindrome</span>.<br>
+                            The original value is :<span class=fw-bold>${input}</span><br>
+                            The reversed value is : <span class="fw-bold">${rotatorValue}</span>
+                            `;
+                        } else {
+                            title.textContent = "Oh no:(";
+                            message.innerHTML = `
+                            The string you entered is <span class="fw-bold"> not a Palindrome </span>.<br>
+                            The original value is :<span class=fw-bold>${input}</span><br>
+                            The reversed value is : <span class="fw-bold">${rotatorValue}</span>
+                            `;
+                        }
+
+                        alertDiv.classList.remove("invisible");
+                    }
+
+                    document.getElementById('submitButton').addEventListener('click', () => {
+                       start();
+                       document.getElementById("phrase").value = "";
+                    });
+
+                    document.getElementById('form').addEventListener('submit', e => {
+                       e.preventDefault();
+                       start();
+                       document.getElementById("phrase").value = "";
+                    });
                     </code></pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that display an alert with the "Hello World" message</p>
+                    <p class="lead">The Code is structured in three functions</p>
+                    <p class="lead border-bottom pb-2">First we select elements from and save them to variables to be
+                        easier later.</p>
+                    <h5>start</h5>
+                    <p class="lead border-bottom pb-2">
+                        First we retrieve the <span class="fw-bold">value</span> value passed it and save it the <span
+                            class="fw-bold">input</span>
+                        variable. Next, using the <span class="fw-bold">.replace</span> function and with the help of a
+                        <span class="fw-bold">regular expression</span>
+                        we eliminate any <span class="fw-bold">white spaces</span> or <span class="fw-bold">special
+                            characters</span> from the <span class="fw-bold">input</span>
+                        and save the result to a new variable. <br>
+                        Next we make sure that the <span class="fw-bold">title</span> and <span
+                            class="fw-bold">message</span> elements are empty and that the
+                        <span class="fw-bold">alert</span> element is <span class="fw-bold">invisible</span> by using
+                        <span class="fw-bold">.classList.add</span>
+                        and inserting the <span class="fw-bold">.invisible</span> class. <br>
+                        After that we check if the <span class="fw-bold">input</span> is empty using a <span
+                            class="fw-bold">if</span> statement. If it is,
+                        we <span class="fw-bold">insert</span> a <span class="fw-bold">title</span> and a <span
+                            class="fw-bold">message</span> letting the user
+                        know he needs to enter a string before continuing. <br>
+                        If the the <span class="fw-bold">input</span> is not empty, we then call the <span
+                            class="fw-bold">rotator function</span> and pass it the
+                        <span class="fw-bold">inputValue</span>(the value that has been trimmed by the regular
+                        expression), and save the result to a new <span class="fw-bold">variable</span>
+                        called <span class="fw-bold">rotatorValue</span> . Lastly we call the <span
+                            class="fw-bold">displayResult</span> function where we pass
+                        <span class="fw-bold">rotatorValue, inputValue</span> and
+                        <span class="fw-bold">variables</span>.
+                    </p>
+                    <h5>rotator</h5>
+                    <p class="lead border-bottom pb-2">
+                        We take as parameter the <span class="fw-bold">inputValue</span> variable. We create a new
+                        <span class="fw-bold">empty array</span>, and using a <span class="fw-bold">for loop</span>
+                        we go throught the received string in reverse order, and each time, using the
+                        <span class="fw-bold">loop's index (i)</span> we <span class="fw-bold">insert</span>
+                        each letter in the created array. <br>
+                        Lastly, using the <span class="fw-bold">.join('')</span> method on the <span
+                            class="fw-bold">array</span>
+                        we return a new <span class="fw-bold">string</span> from the <span class="fw-bold">array</span>
+                        by
+                        replacing the <span class="fw-bold">separator (,)</span> from the array with an <span
+                            class="fw-bold">empty string ('')</span>.
+                    </p>
+                    <h5>displayResult</h5>
+                    <p class="lead">
+                        This function takes three parameters : <br>
+                        <ul class="list-group-flush">
+                            <li class="list-group-item list-group-item-danger w-50 text-center">rotatorValue</li>
+                            <li class="list-group-item list-group-item-danger w-50 text-center">inputValue</li>
+                            <li class="list-group-item list-group-item-danger w-50 text-center">input</li>
+                        </ul>
+                    </p>
+                    <p class="lead">
+                        Next, using a <span class="fw-bold">if / else</span> statement we check to see if the
+                        <span class="fw-bold">inversed variable (rotatorValue)</span> is the same as the
+                        value that has been passed to the <span class="fw-bold">input field</span> after it
+                        was trimmed by the <span class="fw-bold">regular expression (inputValue)</span>.
+                        Depending on the result we <span class="fw-bold">we insert</span> the appropriate text
+                        to the <span class="fw-bold">title</span> and <span class="fw-bold">message</span>
+                        elements from the <span class="fw-bold">alertDiv</span>. Finally we remove the
+                        <span class="fw-bold">.invisible</span> class from the <span class="fw-bold">alertDiv</span>
+                        to make it visible on the page.
+                    </p>
                 </div>
             </div>
         </div>
@@ -111,14 +247,6 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="js/prism.js"></script>
-    <script>
-        Prism.plugins.NormalizeWhitespace.setDefault({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true
-        });
-    </script>
 </body>
 
 </html>

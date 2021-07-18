@@ -52,39 +52,48 @@
         </div>
     </nav>
     <!-- Main Section -->
-    <main class="flex-shrink--">
+    <main class="flex-shrink-0">
         <div class="container">
             <div class="row pt-3">
                 <div class="col border-end border-1 text-center">
-                    <img src="img/ROTATOR/Rotator.svg" alt="Rotator Logo" class="img-fluid" width="200">
-                    <h4 class="lead mt-4">
-                        The word <span class="fw-bold">ROTATOR</span> speaks for itself. It rotates things.
-                        And also, it's a <span class="fw-bold">Palindrome</span>, and that means it is the same,
-                        no matter which way you read it. <span class="fw-bold">Rotating</span> it will get you the same
-                        word.
-                        And thats exactly what our app does. It checks if the word or phrase entered is a <span
-                            class="fw-bold">palindrome</span>. Let's see...
-                    </h4>
+                    <div class="d-flex align-content-center flex-column">
+                        <div>
+                            <img src="img/ROTATOR/RotatorRotated.svg" alt="Rotator Logo" class="img-fluid mb-5 mt-5" width="200" height="200">
+                        </div>
+                        <div>
+                            <h4 class="lead mt-4">
+                                The word <span class="fw-bold">ROTATOR</span> speaks for itself. It rotates things.
+                                And also, it's a <span class="fw-bold">Palindrome</span>, and that means it is the same,
+                                no matter which way you read it. <span class="fw-bold">Rotating</span> it will get you
+                                the
+                                same
+                                word.
+                                And thats exactly what our app does. It checks if the word or phrase entered is a <span
+                                    class="fw-bold">palindrome</span>. Let's see...
+                            </h4>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col">
                     <div class="row border-bottom border-1">
                         <h5>Enter a word or phrase :</h5>
                     </div>
-                    <form action="" class="row">
+                    <form class="row" id="form">
                         <div class="col">
                             <input type="text" class="form-control mt-2" id="phrase" placeholder="Enter a string"
                                 aria-label="Enter a string">
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-outline-danger my-3" type="submit" id="submitButton"></button>
+                            <button class="btn btn-outline-danger my-3" type="button" id="submitButton"></button>
                         </div>
                     </form>
                     <div class="row ms-0 mt-5">
-                        <div class="alert alert-danger fade show" role="alert" id="alert">
+                        <div class="alert alert-danger invisible fade show" role="alert" id="alert">
                             <img src="img/ROTATOR/RotatorButtonAfter.svg" alt="Rotator Logo" class="img-fluid">
-                            <h5 id="resultTitle"></h5>
+                            <h5 id="title"></h5>
                             <hr>
-                            <p class="lead" id="resultText"></p>
+                            <p class="lead" id="message"></p>
                         </div>
                     </div>
                 </div>
