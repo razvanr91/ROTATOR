@@ -8,6 +8,7 @@
                         word.
                         And thats exactly what our app does. It checks if the word or phrase entered is a <span
                             class="fw-bold">palindrome</span>. Let's see...
+ - https://rotatorapp.netlify.app -
 
  All logos were made possible by Jimdo.
  https://www.jimdo.com/
