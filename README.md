@@ -1,5 +1,5 @@
-# ROTATOR
 
+<p align="center">
  <img src="img/ROTATOR/RotatorRotated.svg" class="img-fluid center-block d-block mx-auto my-auto" width="400" height="500" alt="">
 
  The word <span class="fw-bold">ROTATOR</span> speaks for itself. It rotates things.
@@ -11,4 +11,6 @@
 
  All logos were made possible by Jimdo.
  https://www.jimdo.com/
+
+ </p>
 
