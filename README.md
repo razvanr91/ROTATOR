@@ -1,7 +1,8 @@
-![Rotator Logo](img/ROTATOR/logo_small.png)
+
 
 <p align="center">
-
+  
+   ![Rotator Logo](img/ROTATOR/logo_small.png)
 
  The word <span class="fw-bold">ROTATOR</span> speaks for itself. It rotates things.
                         And also, it's a <span class="fw-bold">Palindrome</span>, and that means it is the same,
