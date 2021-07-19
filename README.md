@@ -1,4 +1,4 @@
-![Rotator Logo](img/ROTATOR/RotatorButtonBefore.svg)
+![Rotator Logo](img/ROTATOR/RotatorRotated.svg)
 
 <p align="center">
 
