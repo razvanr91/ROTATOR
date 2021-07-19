@@ -1,4 +1,4 @@
-![Rotator Logo](img/ROTATOR/RotatorRotated.svg)
+![Rotator Logo](img/ROTATOR/logo_small.png)
 
 <p align="center">
 
