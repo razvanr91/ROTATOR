@@ -10,7 +10,7 @@ function start() {
     // retrieve the input value, and using a regular expression
     // we trim out the white spaces and all the special characters
     let input = document.getElementById("phrase").value;
-    let inputValue = input.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    let inputValue = input.replace(/[^a-zA-Z]/g, '').toLowerCase();
 
     // make sure the title and message are empty
     title.textContent = "";
